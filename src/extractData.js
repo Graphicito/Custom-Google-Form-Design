@@ -16,6 +16,7 @@ const getShortAnswers = (formQuestions) => {
     let shortAnswers = formQuestions.filter(q => q[3] === 0);
     shortAnswers = shortAnswers.map(q => {
         return {
+            type: 'short-answer',
             entry: q[0],
             title: q[1],
             description: q[2],
@@ -30,6 +31,7 @@ const getParagraphs = (formQuestions) => {
     let paragraphs = formQuestions.filter(q => q[3] === 1);
     paragraphs = paragraphs.map(q => {
         return {
+            type: 'paragraph',
             entry: q[0],
             title: q[1],
             description: q[2],
@@ -58,6 +60,7 @@ const getMultipleChoice = (formQuestions) => {
         })
 
         return {
+            type: 'multiple-choice',
             entry: q[0],
             title: q[1],
             description: q[2],
@@ -82,6 +85,7 @@ const getDropDown = (formQuestions) => {
         })
 
         return {
+            type: 'dropdown',
             entry: q[0],
             title: q[1],
             description: q[2],
@@ -106,6 +110,7 @@ const getCheckBoxes = (formQuestions) => {
         })
 
         return {
+            type: 'checkbox',
             entry: q[0],
             title: q[1],
             description: q[2],
@@ -124,6 +129,7 @@ const getLinearScale = (formQuestions) => {
         let totalChoices = q[4][0][1].length || 0;
 
         return {
+            type: 'linear-scale',
             entry: q[0],
             title: q[1],
             description: q[2],
