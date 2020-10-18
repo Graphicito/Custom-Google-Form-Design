@@ -49,7 +49,7 @@ const getByCategory = async (formUrl) => {
         formAction: `https://docs.google.com/forms/u/0/d/${fBData[14]}/formResponse`,
         formTitle,
         formDescription,
-        answers: {
+        questions: {
             shortAnswers,
             paragraphs,
             multipleChoice,
@@ -71,7 +71,7 @@ const get = async (formUrl) => {
 
     //Form questions
     const formQuestions = form[1] || null;
-    
+
     let extractedQuestions = [];
 
     formQuestions.forEach(q => {
@@ -105,7 +105,7 @@ const get = async (formUrl) => {
         formAction: `https://docs.google.com/forms/u/0/d/${fBData[14]}/formResponse`,
         formTitle, 
         formDescription, 
-        answers: extractedQuestions
+        questions: extractedQuestions
     };
 }
 

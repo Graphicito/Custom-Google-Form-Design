@@ -17,7 +17,7 @@ const getShortAnswers = (formQuestions) => {
     shortAnswers = shortAnswers.map(q => {
         return {
             type: 'short-answer',
-            entry: `entry.${q[0]}`,
+            entry: `entry.${q[4][0][0]}`,
             title: q[1],
             description: q[2],
             required: Boolean(q[4][0][2]),
@@ -32,7 +32,7 @@ const getParagraphs = (formQuestions) => {
     paragraphs = paragraphs.map(q => {
         return {
             type: 'paragraph',
-            entry: `entry.${q[0]}`,
+            entry: `entry.${q[4][0][0]}`,
             title: q[1],
             description: q[2],
             required: Boolean(q[4][0][2]),
@@ -61,7 +61,7 @@ const getMultipleChoice = (formQuestions) => {
 
         return {
             type: 'multiple-choice',
-            entry: `entry.${q[0]}`,
+            entry: `entry.${q[4][0][0]}`,
             title: q[1],
             description: q[2],
             choices,
@@ -86,7 +86,7 @@ const getDropDown = (formQuestions) => {
 
         return {
             type: 'dropdown',
-            entry: `entry.${q[0]}`,
+            entry: `entry.${q[4][0][0]}`,
             title: q[1],
             description: q[2],
             choices,
@@ -111,7 +111,7 @@ const getCheckBoxes = (formQuestions) => {
 
         return {
             type: 'checkbox',
-            entry: `entry.${q[0]}`,
+            entry: `entry.${q[4][0][0]}`,
             title: q[1],
             description: q[2],
             choices,
@@ -130,7 +130,7 @@ const getLinearScale = (formQuestions) => {
 
         return {
             type: 'linear-scale',
-            entry: `entry.${q[0]}`,
+            entry: `entry.${q[4][0][0]}`,
             title: q[1],
             description: q[2],
             minLabel: q[4][0][3][0],
