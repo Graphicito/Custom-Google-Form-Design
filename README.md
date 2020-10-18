@@ -4,7 +4,7 @@
 ___
 
 ### Install the package
-`npm i custom-google-form`
+`npm i custom-gform`
 
 After installing the package, run `npm install` to install all dependencies.
 
