@@ -130,7 +130,7 @@ const getLinearScale = (formQuestions) => {
 
         return {
             type: 'linear-scale',
-            entry: q[0],
+            entry: `entry.${q[0]}`,
             title: q[1],
             description: q[2],
             minLabel: q[4][0][3][0],
