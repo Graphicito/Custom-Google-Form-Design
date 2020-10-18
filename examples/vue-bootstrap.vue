@@ -21,7 +21,7 @@
       >
         <b-form-input
           v-if="i.type === 'short-answer'"
-          required
+          :required="i.required"
           v-model="formData[i.title]"
           :name="i.entry"
         ></b-form-input>
