@@ -91,3 +91,6 @@ ___
 
 ### Vue + Bootstrap Example
 Check our the `examples/vue-bootstrap.vue` folder for example usage
+___
+### Credits
+Custom GForm is created and maintained by [Graphicito](http://graphicito.com). For custom web development solution or customization, contact us at [Contact Graphicito](http://graphicito.com/contact).
