@@ -11,5 +11,9 @@
   "dependencies": {
     "axios": "^0.20.0",
     "lodash": "^4.17.20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Graphicito/Custom-Google-Form-Design.git"
   }
 }

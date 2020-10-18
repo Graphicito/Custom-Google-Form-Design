@@ -1,6 +1,6 @@
-const { getShortAnswers,getParagraphs,getMultipleChoice,getDropDown,getCheckBoxes,getLinearScale } = require('./src/extractData.js');
 const _ = require('lodash');
 const axios = require('axios');
+const { getShortAnswers, getParagraphs, getMultipleChoice,getDropDown, getCheckBoxes, getLinearScale } = require('./src/extractData.js');
 
 const getHtml = async (formUrl) => {
     return await axios.get(formUrl).then(rsp => rsp.data);
@@ -13,10 +13,9 @@ const extractFbPublicLoadData = (html) => {
     return JSON.parse(data);
 }
 
-const getBasicData = (fBData, form) => {
+const getBasicData = (form) => {
     // Title 
-    const formTitle = fBData[3] || '';
-
+    const formTitle = form[8] || '';
     //Form description
     const formDescription = form[0] || '';
 
@@ -33,7 +32,7 @@ const getByCategory = async (formUrl) => {
     // Extract form that stores description and questions
     const form = fBData[1] || null;
 
-    const { formTitle, formDescription } = getBasicData(fBData, form);
+    const { formTitle, formDescription } = getBasicData(form);
 
     //Form questions
     const formQuestions = form[1] || null;
@@ -68,7 +67,7 @@ const get = async (formUrl) => {
     // Extract form that stores description and questions
     const form = fBData[1] || null;
 
-    const { formTitle, formDescription } = getBasicData(fBData, form);
+    const { formTitle, formDescription } = getBasicData(form);
 
     //Form questions
     const formQuestions = form[1] || null;
@@ -102,7 +101,12 @@ const get = async (formUrl) => {
         return {...found}
     })
 
-    return extractedQuestions;
+    return {
+        formAction: `https://docs.google.com/forms/u/0/d/${fBData[14]}/formResponse`,
+        formTitle, 
+        formDescription, 
+        answers: extractedQuestions
+    };
 }
 
 module.exports = {
