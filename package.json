@@ -1,6 +1,6 @@
 {
   "name": "custom-gform",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,8 @@
     "google form",
     "custom google form",
     "free form",
-    "quick form create"
+    "quick form create",
+    "customize google form",
+    "style google form"
   ]
 }

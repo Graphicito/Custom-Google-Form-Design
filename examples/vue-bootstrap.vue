@@ -26,8 +26,38 @@
           :name="i.entry"
         ></b-form-input>
 
+        <b-form-radio-group
+          v-else-if="i.type === 'multiple-choice'"
+          :options="i.choices"
+          v-model="formData[i.title]"
+          :required="i.required"
+          :name="i.entry"
+        >
+        </b-form-radio-group>
+
+        <b-form-checkbox-group
+          v-else-if="i.type === 'checkbox'"
+          :options="i.choices"
+          v-model="formData[i.title]"
+          :required="i.required"
+          :name="i.entry"
+        >
+        </b-form-checkbox-group>
+
+        <b-form-select
+          v-else-if="i.type === 'dropdown'"
+          :options="i.choices"
+          text="--Select--"
+          v-model="formData[i.title]"
+          :required="i.required"
+          :name="i.entry"
+        >
+        </b-form-select>
+
         <!-- 
-            handle other type of inputs below... 
+          linear-scale is essentially a group of radio buttons..
+
+          handle other type of inputs below... 
         -->
       </b-form-group>
 
@@ -38,7 +68,7 @@
 
 <script>
 import axios from "axios";
-import gform from "custom-google-form";
+import { get } from "custom-gform";
 
 export default {
   data() {
@@ -52,14 +82,15 @@ export default {
   },
   methods: {
     async getForm() {
-      this.gFormData = await gform.get(
-        "https://docs.google.com/forms/d/1arkMnCT_O8c1KO6-vcrMRGikzVZsOzwJCL82ZM8RJOw/edit"
+      this.gFormData = await get(
+        "https://docs.google.com/forms/d/e/1FAIpQLSc5LAweF5HoptCrQ0FLEqA5ehUlMog1vki_NXxaXDYPH8q_QA/viewform"
       );
 
       // Dynamically sets v-model from title
       // Not necessary but useful for form validation
+      // Must set if form contains selective inputs (combobox, dropdrop, multiplechoice..)
       // Each form input v-model is declared using its title
-      const dynamicVModel = this.gFormData.questions.map((i) => i.title);
+      const dynamicVModel = this.gFormData.questions.map(i => i.title);
 
       dynamicVModel.forEach((i) => {
         this.$set(this.formData, i, null);
@@ -73,7 +104,7 @@ export default {
       await ax
         .post(this.gFormData.formAction, formData)
         .then((rsp) => {
-          // Do something here...
+          // Handle success here...
         })
         .catch((err) => {
           console.log(err);

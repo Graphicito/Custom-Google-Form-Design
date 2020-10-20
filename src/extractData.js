@@ -49,14 +49,10 @@ const getMultipleChoice = (formQuestions) => {
 
         choices = choices.map(choice => {
             if(choice[4] === 1){
-                return {
-                    title: 'Others'
-                }
+                return 'Others';
             }
 
-            return {
-                title: choice[0]
-            }
+            return choice[0];
         })
 
         return {
@@ -78,11 +74,7 @@ const getDropDown = (formQuestions) => {
     dropDown = dropDown.map(q => {
         let choices = q[4][0][1];
 
-        choices = choices.map(choice => {
-            return {
-                title: choice[0]
-            }
-        })
+        choices = choices.map(choice => choice[0])
 
         return {
             type: 'dropdown',
@@ -103,11 +95,7 @@ const getCheckBoxes = (formQuestions) => {
     checkBoxes = checkBoxes.map(q => {
         let choices = q[4][0][1];
 
-        choices = choices.map(choice => {
-            return {
-                title: choice[0]
-            }
-        })
+        choices = choices.map(choice => choice[0]);
 
         return {
             type: 'checkbox',
