@@ -1,7 +1,9 @@
 # Google Form Customizer
 ### Beautify and customize your Google Form with custom HTML and CSS.
-<img src="./examples/sample_vuetify_gform.png" alt="graphicito custom google form" width="250"/>
-<img src="./examples/sample_custom_vuetify_form.png" alt="graphicito custom google form" width="250"/>
+
+<!-- ![alt-text-1](./examples/sample_vuetify_gform.png) ![alt-text-2](./examples/sample_custom_vuetify_form.png "title-2") -->
+<img src="./examples/sample_vuetify_gform.png" alt="graphicito custom google form" width="250"/><img src="./examples/sample_custom_vuetify_form.png" alt="graphicito custom google form" width="250"/>
+</br>
 Original Google Form (left) vs Customized Google Form (right)
 
 ___
@@ -93,7 +95,7 @@ ___
 ___
 
 ### Vue + Bootstrap Example
-Check our the `examples/vue-bootstrap.vue` folder for example usage
+Check out the `examples/vue-bootstrap.vue` folder in GitHub for example usage
 ___
 ### Credits
-Custom GForm is created and maintained by [Graphicito](http://graphicito.com). For custom web development solution or customization, contact us at [Contact Graphicito](http://graphicito.com/contact).
+Custom GForm is created and maintained by [Graphicito](http://graphicito.com). For custom web development solution or Google Form customization, contact us at [Contact Graphicito](http://graphicito.com/contact).
