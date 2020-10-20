@@ -1,7 +1,9 @@
 # Google Form Customizer
 ### Beautify and customize your Google Form with custom HTML and CSS.
-<img src="./examples/sample_vuetify_gform.png" alt="graphicito custom google form" width="300"/>
-<img src="./examples/sample_custom_vuetify_form.png" alt="graphicito custom google form" width="300"/>
+<img src="./examples/sample_vuetify_gform.png" alt="graphicito custom google form" width="250"/>
+<img src="./examples/sample_custom_vuetify_form.png" alt="graphicito custom google form" width="250"/>
+Original Google Form (left) vs Customized Google Form (right)
+
 ___
 
 ### Install the package
