@@ -11,7 +11,7 @@ ___
 ### Install the package
 `npm i custom-gform`
 
-After installing the package, run `npm install` to install all dependencies.
+Run `npm install` to install all dependencies only if you are cloning the project.
 
 ___
 ### API
