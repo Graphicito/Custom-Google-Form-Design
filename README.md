@@ -1,6 +1,10 @@
 # Google Form Customizer
 ### Beautify and customize your Google Form with custom HTML and CSS.
 
+## Update 3/11/2020:
+### Added easy vue form submit without importing axios and name attribute dependency. See below for example implementation.
+<br>
+
 <!-- ![alt-text-1](./examples/sample_vuetify_gform.png) ![alt-text-2](./examples/sample_custom_vuetify_form.png "title-2") -->
 <img src="./examples/sample_vuetify_gform.png" alt="graphicito custom google form" width="250"/><img src="./examples/sample_custom_vuetify_form.png" alt="graphicito custom google form" width="250"/>
 </br>
@@ -15,10 +19,12 @@ Run `npm install` to install all dependencies only if you are cloning the projec
 
 ___
 ### API
-| API  | Description |
-| ---- | ----------- |
-| get | Retrieve all form data in the same order listed
-| getByCategory | Retrieve all form data and categorize the questions into its own category (short answers, multiple choice...)
+| API  | Description | Params|
+| ---- | ----------- | ------|
+| get | Retrieve all form data in the same order listed | none
+| getBasicData | Returns the form title and description | none
+| getByCategory | Retrieve all form data and categorize the questions into its own category (short answers, multiple choice...) | none
+vueSubmitForm | Submit form on Vue app with one line of code |(gFormData, formData) 
 
 ___
 
@@ -92,6 +98,39 @@ ___
 | formAction | POST api to submit the form response
 | entry | Use this in the `name` attribute of each form input 
 | required | Check for required form field
+___
+
+### *NEW*: Submit forms with one line of code (VUE ONLY)
+
+Always validate your form and don't submit empty forms. Remember to import the api as well.
+
+```js
+    import { vueSubmitForm } from 'custom-gform';
+```
+```js
+    methods: {
+        /*
+            Retrieve this.gFormData with the .get api and pass it to the first param
+            Pass all v-model formData into the second param
+            Check code in the next section to learn how to dynamically assign v-models for your form
+        */
+       
+        async submitForm() {
+            // Returns a promise with {code: success/fail}!
+            await vueSubmitForm(this.gFormData, this.formData);
+        },
+    }
+```
+Dynamically assign v-model (view example in examples/vue-bootstrap.vue for more info)
+```js
+    mounted(){
+        const dynamicVModel = this.gFormData.questions.map((i) => i.title);
+
+        dynamicVModel.forEach((i) => {
+            this.$set(this.formData, i, null);
+        });
+    }
+```
 ___
 
 ### Vue + Bootstrap Example

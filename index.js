@@ -1,6 +1,7 @@
 const _ = require('lodash');
 const axios = require('axios');
 const { getShortAnswers, getParagraphs, getMultipleChoice,getDropDown, getCheckBoxes, getLinearScale } = require('./src/extractData.js');
+const { vueSubmitForm } = require('./src/vueFns.js');
 
 const getHtml = async (formUrl) => {
     return await axios.get(formUrl).then(rsp => rsp.data);
@@ -112,5 +113,6 @@ const get = async (formUrl) => {
 module.exports = {
     get,
     getBasicData,
-    getByCategory
+    getByCategory,
+    vueSubmitForm,
 }
