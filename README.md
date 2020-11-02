@@ -121,7 +121,7 @@ Always validate your form and don't submit empty forms. Remember to import the a
         },
     }
 ```
-Dynamically assign v-model (view example in examples/vue-bootstrap.vue for more info)
+Dynamically assigns v-model (view example in examples/vue-bootstrap.vue for more info)
 ```js
     mounted(){
         const dynamicVModel = this.gFormData.questions.map((i) => i.title);
