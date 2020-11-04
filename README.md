@@ -70,6 +70,7 @@ ___
                 title: 'Short Answer',
                 type: 'short-answer',
                 description: 'Description: REQUIRED',
+                placeholder: '',
                 required: true 
             }
         ]
@@ -147,6 +148,6 @@ ___
 ### Changelog
 ```
     4/11/2020: Added placeholder attribute to the shortanswer paragraph, and dropdown objects. Used for model data binding in custom form if user wishes to add placeholder (which does not exist in Google Form).
-    
+
     3/11/2020: Added easy vue form submit without importing axios and name attribute dependency.
 ```
