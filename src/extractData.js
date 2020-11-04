@@ -21,6 +21,7 @@ const getShortAnswers = (formQuestions) => {
             title: q[1],
             description: q[2],
             required: Boolean(q[4][0][2]),
+            placeholder: ''
         }
     })
     
@@ -36,6 +37,7 @@ const getParagraphs = (formQuestions) => {
             title: q[1],
             description: q[2],
             required: Boolean(q[4][0][2]),
+            placeholder: ''
         }
     })
 
@@ -82,7 +84,8 @@ const getDropDown = (formQuestions) => {
             title: q[1],
             description: q[2],
             choices,
-            required: Boolean(q[4][0][2]),  
+            required: Boolean(q[4][0][2]),
+            placeholder: ''  
         }
     })
 

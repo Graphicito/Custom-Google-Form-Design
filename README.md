@@ -1,8 +1,9 @@
 # Google Form Customizer
 ### Beautify and customize your Google Form with custom HTML and CSS.
+<br>
 
-## Update 3/11/2020:
-### Added easy vue form submit without importing axios and name attribute dependency. See below for example implementation.
+## Update 4/11/2020:
+#### Added placeholder attribute to the shortanswer paragraph, and dropdown objects. Used for model data binding in custom form if user wishes to add placeholder (which does not exist in Google Form).
 <br>
 
 <!-- ![alt-text-1](./examples/sample_vuetify_gform.png) ![alt-text-2](./examples/sample_custom_vuetify_form.png "title-2") -->
@@ -51,6 +52,7 @@ ___
         questions: [ 
             { 
                 entry: 'entry.159023240',
+                type: 'multiple-choice',
                 title: 'Multiple choice',
                 description: 'MC Description',
                 choices: [ [Object], [Object], [Object] ],
@@ -59,12 +61,14 @@ ___
             { 
                 entry: 'entry.1862994755',
                 title: 'Multiple choice',
+                type: 'multiple-choice',
                 description: 'MC Description REQUIRED',
                 choices: [ [Object], [Object] ],
                 required: true },
             { 
                 entry: 'entry.1536591222',
                 title: 'Short Answer',
+                type: 'short-answer',
                 description: 'Description: REQUIRED',
                 required: true 
             }
@@ -138,3 +142,11 @@ Check out the `examples/vue-bootstrap.vue` folder in GitHub for example usage
 ___
 ### Credits
 Custom GForm is created and maintained by [Graphicito](http://graphicito.com). For custom web development solution or Google Form customization, contact us at [Contact Graphicito](http://graphicito.com/contact).
+
+___
+### Changelog
+```
+    4/11/2020: Added placeholder attribute to the shortanswer paragraph, and dropdown objects. Used for model data binding in custom form if user wishes to add placeholder (which does not exist in Google Form).
+    
+    3/11/2020: Added easy vue form submit without importing axios and name attribute dependency.
+```
